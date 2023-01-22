@@ -142,7 +142,6 @@ static void printList(){
 
 
 static void addFree(block_t *block){
-	//printList();
 	int bucket = findBucket(block->block_size);
 	if(segList[bucket] != NULL){
 		block->body.next = segList[bucket];
@@ -156,7 +155,6 @@ static void addFree(block_t *block){
 }
 
 static void removeFree(block_t *block){
-	//printList();
 	int bucket = findBucket(block->block_size);
 	block_t *nextBlock = block->body.next;
 	block_t *prevBlock = block->body.prev;
@@ -393,15 +391,6 @@ static block_t *find_fit(size_t asize) {
     	 }
     }
     return NULL;
-
-
-   // for (b = (void*)prologue + prologue->block_size; b->block_size > 0; b = (void *)b + b->block_size) {
-        /* block must be free and the size must be large enough to hold the request */
-     //   if (!b->allocated && asize <= b->block_size) {
-         //   return b;
-       // }
-   // }
-   // return NULL; /* no fit */
 }
 
 /*
