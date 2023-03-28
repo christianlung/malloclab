@@ -2,10 +2,10 @@
 I implemented the C standard library of malloc and related functions. 
 
 <h2>Data Organization</h2>
-This implementation features a segregated free list, which poses higher throughout and greater memory utilization than a free list.
-- The segregated list is an array of free lists (implemented bylinked lists), categorizing blocks by block size of powers of 2. 
+This implementation features a segregated free list, which poses higher throughout and greater memory utilization than a free list. The segregated list is an array of free lists (implemented bylinked lists), categorizing blocks by block size of powers of 2. 
 
-Each block is denoted by a struct.
+Each block is denoted by a struct
+
 - Contains the payload, metadata and tag, and pointer to previous and next blocks
 
 <h2>Library Main Functions</h2>
